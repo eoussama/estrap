@@ -14,13 +14,13 @@ STYLES_FOLDER=styles
 IMAGES_FOLDER=images
 
 # Setting this to true will include EOmponents in your project.
-EOMPONENTS=true
+EOMPONENTS=false
 
 # Setting this to true will include bootstrap in your project [if set to true, jQuery will automatically be included], and vice versa.
-BOOTSTRAP=true
+BOOTSTRAP=false
 
 # Setting this to true will include jQuery in your project [including bootsrap will have this set to true regardless], and vice versa.
-JQUERY=true
+JQUERY=false
 
 # Setting this to true will include the font awesome cdn, and vice versa.
 FONTAWESOME=false
@@ -79,8 +79,31 @@ CreateFile "$SCRIPTS_FOLDER/main.js" "// $PROJECT_NAME by $AUTHOR"
 CreateFile "$STYLES_FOLDER/main.css" "/* $PROJECT_NAME by $AUTHOR */"
 CreateFile "index.html"
 
-echo -e '<!DOCTYPE html>
+JQUERY_JS_ADDON=""
+BOOTSTRAP_CSS_ADDON=""
+BOOSTRAP_JS_ADDON=""
+EOMPONENTS_CSS_ADDON=""
+EOMPONENTS_JS_ADDON=""
 
+if [ $BOOTSTRAP == "true" ]
+then
+    BOOTSTRAP_CSS_ADDON="<link rel=\"stylesheet\" type=\"text/css\" href=\"$STYLES_FOLDER/bootstrap.min.css\">"
+    BOOTSTRAP_JS_ADDON="<script type=\"text/javascript\" src=\"$SCRIPTS_FOLDER/bootstrap.min.js\"></script>"
+    JQUERY="true"
+fi
+
+if [ $JQUERY == "true" ]
+then
+    JQUERY_JS_ADDON="<script type=\"text/javascript\" src=\"$SCRIPTS_FOLDER/jquery-3.3.1.min.js\"></script>"
+fi
+
+if [ $EOMPONENTS == "true" ]
+then
+    EOMPONENTS_CSS_ADDON="<link rel=\"stylesheet\" type=\"text/css\" href=\"$STYLES_FOLDER/eomponents.css\">"
+    EOMPONENTS_JS_ADDON="<script type=\"text/javascript\" src=\"$SCRIPTS_FOLDER/eomponents.js\"></script>"
+fi
+
+echo -e '<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -90,6 +113,8 @@ echo -e '<!DOCTYPE html>
         <meta name="description" content="'"$PROJECT_DESC"'">
         <meta name="keywords" content="'"$PROJECT_KEYWORDS"'">
 
+        '"$BOOTSTRAP_CSS_ADDON"'
+        '"$EOMPONENTS_CSS_ADDON"'
         <link rel="shortcut icon" type="image/png" href="'"$IMAGES_FOLDER"'/">
         <link rel="stylesheet" type="text/css" href="'"$STYLES_FOLDER"'/main.css">
 
@@ -98,6 +123,9 @@ echo -e '<!DOCTYPE html>
 
     <body>
 
+        '"$JQUERY_JS_ADDON"'
+        '"$BOOTSTRAP_JS_ADDON"'
+        '"$EOMPONENTS_JS_ADDON"'
         <script type="text/javascript" src="'"$SCRIPTS_FOLDER"'/main.js"></script>
     </body>
 </html>
