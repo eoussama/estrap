@@ -85,20 +85,20 @@ echo -e '<!DOCTYPE html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="$AUTHOR">
-        <meta name="application-name" content="$PROJECT_NAME">
-        <meta name="description" content="$PROJECT_DESC">
-        <meta name="keywords" content="$PROJECT_KEYWORDS">
+        <meta name="author" content="'"$AUTHOR"'">
+        <meta name="application-name" content="'"$PROJECT_NAME"'">
+        <meta name="description" content="'"$PROJECT_DESC"'">
+        <meta name="keywords" content="'"$PROJECT_KEYWORDS"'">
 
-        <link rel="shortcut icon" type="image/png" href="$IMAGES_FOLDER/">
-        <link rel="stylesheet" type="text/css" href="$STYLES_FOLDER/main.css">
+        <link rel="shortcut icon" type="image/png" href="'"$IMAGES_FOLDER"'/">
+        <link rel="stylesheet" type="text/css" href="'"$STYLES_FOLDER"'/main.css">
 
-        <title>$PROJECT_NAME</title>
+        <title>'"$PROJECT_NAME"'</title>
     </head>
 
     <body>
 
-        <script type="text/javascript" src="$SCRIPTS_FOLDER/main.js"></script>
+        <script type="text/javascript" src="'"$SCRIPTS_FOLDER"'/main.js"></script>
     </body>
 </html>
 ' > "exports/$PROJECT_NAME/index.html"
