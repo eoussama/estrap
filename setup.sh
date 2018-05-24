@@ -17,7 +17,7 @@ IMAGES_FOLDER="images"
 FONTS_FOLDER="fonts"
 
 # Setting this to true will include EOmponents in your project.
-EOMPONENTS=true
+EOMPONENTS=false
 
 # Setting this to true will include bootstrap in your project [if set to true, jQuery will automatically be included], and vice versa.
 BOOTSTRAP=false
@@ -26,7 +26,7 @@ BOOTSTRAP=false
 JQUERY=false
 
 # Setting this to true will include the font awesome cdn, and vice versa.
-FONTAWESOME=true
+FONTAWESOME=false
 
 
 
@@ -63,8 +63,8 @@ CreateFolder "$IMAGES_FOLDER"
 
 if [ "$EOMPONENTS" == "true" ]
 then
-	cp "resources/EOmponents/styles/eomponents.css" "exports/$PROJECT_NAME/$STYLES_FOLDER/eomponents.css"
-    cp "resources/EOmponents/scripts/eomponents.js" "exports/$PROJECT_NAME/$SCRIPTS_FOLDER/eomponents.js"
+	cp "resources/EOmponents/styles/eomponents.min.css" "exports/$PROJECT_NAME/$STYLES_FOLDER/eomponents.min.css"
+    cp "resources/EOmponents/scripts/eomponents.min.js" "exports/$PROJECT_NAME/$SCRIPTS_FOLDER/eomponents.min.js"
     
     mkdir "exports/$PROJECT_NAME/$FONTS_FOLDER"
     cp -r "resources/EOmponents/fonts/Roboto/" "exports/$PROJECT_NAME/$FONTS_FOLDER/Roboto/"
@@ -111,8 +111,8 @@ fi
 
 if [ $EOMPONENTS == "true" ]
 then
-    EOMPONENTS_CSS_ADDON="<link rel=\"stylesheet\" type=\"text/css\" href=\"$STYLES_FOLDER/eomponents.css\">"
-    EOMPONENTS_JS_ADDON="<script type=\"text/javascript\" src=\"$SCRIPTS_FOLDER/eomponents.js\"></script>"
+    EOMPONENTS_CSS_ADDON="<link rel=\"stylesheet\" type=\"text/css\" href=\"$STYLES_FOLDER/eomponents.min.css\">"
+    EOMPONENTS_JS_ADDON="<script type=\"text/javascript\" src=\"$SCRIPTS_FOLDER/eomponents.min.js\"></script>"
 fi
 
 if [ $FONTAWESOME == "true" ]
