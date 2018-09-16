@@ -26,7 +26,7 @@ BOOTSTRAP=false
 JQUERY=false
 
 # Setting this to true will include the font awesome cdn, and vice versa.
-FONTAWESOME=false
+FONTAWESOME=true
 
 
 
