@@ -57,37 +57,38 @@ CreateFile() {
 }
 
 mkdir "exports/$PROJECT_NAME"
-CreateFolder "$SCRIPTS_FOLDER"
-CreateFolder "$STYLES_FOLDER"
-CreateFolder "$IMAGES_FOLDER"
+mkdir "exports/$PROJECT_NAME/assets"
+CreateFolder "assets/$SCRIPTS_FOLDER"
+CreateFolder "assets/$STYLES_FOLDER"
+CreateFolder "assets/$IMAGES_FOLDER"
 
 if [ "$EOMPONENTS" == "true" ]
 then
-	cp "resources/EOmponents/styles/eomponents.min.css" "exports/$PROJECT_NAME/$STYLES_FOLDER/eomponents.min.css"
-    cp "resources/EOmponents/scripts/eomponents.min.js" "exports/$PROJECT_NAME/$SCRIPTS_FOLDER/eomponents.min.js"
+	cp "resources/EOmponents/styles/eomponents.min.css" "exports/$PROJECT_NAME/assets/$STYLES_FOLDER/eomponents.min.css"
+    cp "resources/EOmponents/scripts/eomponents.min.js" "exports/$PROJECT_NAME/assets/$SCRIPTS_FOLDER/eomponents.min.js"
     
-    mkdir "exports/$PROJECT_NAME/$FONTS_FOLDER"
-    cp -r "resources/EOmponents/fonts/Roboto/" "exports/$PROJECT_NAME/$FONTS_FOLDER/Roboto/"
+    mkdir "exports/$PROJECT_NAME/assets/$FONTS_FOLDER"
+    cp -r "resources/EOmponents/fonts/Roboto/" "exports/$PROJECT_NAME/assets/$FONTS_FOLDER/Roboto/"
 fi
 
 if [ "$BOOTSTRAP" == "true" ]
 then
-	cp "resources/bootstrap/css/bootstrap.min.css" "exports/$PROJECT_NAME/$STYLES_FOLDER/bootstrap.min.css"
-    cp "resources/bootstrap/js/bootstrap.min.js" "exports/$PROJECT_NAME/$SCRIPTS_FOLDER/bootstrap.min.js"
+	cp "resources/bootstrap/css/bootstrap.min.css" "exports/$PROJECT_NAME/assets/$STYLES_FOLDER/bootstrap.min.css"
+    cp "resources/bootstrap/js/bootstrap.min.js" "exports/$PROJECT_NAME/assets/$SCRIPTS_FOLDER/bootstrap.min.js"
 fi
 
 if [ "$JQUERY" == "true" ]
 then
-    cp "resources/jQuery/jquery-3.3.1.min.js" "exports/$PROJECT_NAME/$SCRIPTS_FOLDER/jquery-3.3.1.min.js"
+    cp "resources/jQuery/jquery-3.3.1.min.js" "exports/$PROJECT_NAME/assets/$SCRIPTS_FOLDER/jquery-3.3.1.min.js"
 fi
 
 if [ "$FONTAWESOME" == "true" ]
 then
-	cp -r "resources/font-awesome/" "exports/$PROJECT_NAME/fonts/"
+	cp -r "resources/font-awesome/" "exports/$PROJECT_NAME/assets/fonts/"
 fi
 
-CreateFile "$SCRIPTS_FOLDER/main.js" "// $PROJECT_NAME by $AUTHOR"
-CreateFile "$STYLES_FOLDER/main.css" "/* $PROJECT_NAME by $AUTHOR */"
+CreateFile "assets/$SCRIPTS_FOLDER/main.js" "// $PROJECT_NAME by $AUTHOR"
+CreateFile "assets/$STYLES_FOLDER/main.css" "/* $PROJECT_NAME by $AUTHOR */"
 CreateFile "index.html"
 
 JQUERY_JS_ADDON=""
@@ -99,25 +100,25 @@ FONTAWESOME_CSS_ADDON=""
 
 if [ $BOOTSTRAP == "true" ]
 then
-    BOOTSTRAP_CSS_ADDON="<link rel=\"stylesheet\" type=\"text/css\" href=\"$STYLES_FOLDER/bootstrap.min.css\">"
-    BOOTSTRAP_JS_ADDON="<script type=\"text/javascript\" src=\"$SCRIPTS_FOLDER/bootstrap.min.js\"></script>"
+    BOOTSTRAP_CSS_ADDON="<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/$STYLES_FOLDER/bootstrap.min.css\">"
+    BOOTSTRAP_JS_ADDON="<script type=\"text/javascript\" src=\"assets/$SCRIPTS_FOLDER/bootstrap.min.js\"></script>"
     JQUERY="true"
 fi
 
 if [ $JQUERY == "true" ]
 then
-    JQUERY_JS_ADDON="<script type=\"text/javascript\" src=\"$SCRIPTS_FOLDER/jquery-3.3.1.min.js\"></script>"
+    JQUERY_JS_ADDON="<script type=\"text/javascript\" src=\"assets/$SCRIPTS_FOLDER/jquery-3.3.1.min.js\"></script>"
 fi
 
 if [ $EOMPONENTS == "true" ]
 then
-    EOMPONENTS_CSS_ADDON="<link rel=\"stylesheet\" type=\"text/css\" href=\"$STYLES_FOLDER/eomponents.min.css\">"
-    EOMPONENTS_JS_ADDON="<script type=\"text/javascript\" src=\"$SCRIPTS_FOLDER/eomponents.min.js\"></script>"
+    EOMPONENTS_CSS_ADDON="<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/$STYLES_FOLDER/eomponents.min.css\">"
+    EOMPONENTS_JS_ADDON="<script type=\"text/javascript\" src=\"assets/$SCRIPTS_FOLDER/eomponents.min.js\"></script>"
 fi
 
 if [ $FONTAWESOME == "true" ]
 then
-    FONTAWESOME_CSS_ADDON="<link rel=\"stylesheet\" type=\"text/css\" href=\"$FONTS_FOLDER/font-awesome/css/fontawesome-all.min.css\">"
+    FONTAWESOME_CSS_ADDON="<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/$FONTS_FOLDER/font-awesome/css/fontawesome-all.min.css\">"
 fi
 
 echo -e '<!DOCTYPE html>
@@ -133,8 +134,8 @@ echo -e '<!DOCTYPE html>
         '"$FONTAWESOME_CSS_ADDON"'
         '"$BOOTSTRAP_CSS_ADDON"'
         '"$EOMPONENTS_CSS_ADDON"'
-        <link rel="shortcut icon" type="image/png" href="'"$IMAGES_FOLDER"'/">
-        <link rel="stylesheet" type="text/css" href="'"$STYLES_FOLDER"'/main.css">
+        <link rel="shortcut icon" type="image/png" href="'"assets/$IMAGES_FOLDER"'/">
+        <link rel="stylesheet" type="text/css" href="'"assets/$STYLES_FOLDER"'/main.css">
 
         <title>'"$PROJECT_NAME"'</title>
     </head>
@@ -144,7 +145,7 @@ echo -e '<!DOCTYPE html>
         '"$JQUERY_JS_ADDON"'
         '"$BOOTSTRAP_JS_ADDON"'
         '"$EOMPONENTS_JS_ADDON"'
-        <script type="text/javascript" src="'"$SCRIPTS_FOLDER"'/main.js"></script>
+        <script type="text/javascript" src="'"assets/$SCRIPTS_FOLDER"'/main.js"></script>
     </body>
 </html>
 ' > "exports/$PROJECT_NAME/index.html"

@@ -4,6 +4,24 @@
 ## Description
 It gets too repetitive at times to setup your project environment, it's at most cases very a quick and easy task to do, but sometimes it can get pretty messy. Here's an executable file to help you out, while not anything remarkable, it does save time, you're only a click away from setting up a basic web application environment, consisting of an *HTML*, a **Javascript**, and a **CSS** file, aswell as few additional libraries.
 
+## Project Structure
+```
+    [Project Folder]
+    |________________[assets]
+    |                |_____________[Style Folder]
+    |                |             |_________________{normalize.css}
+    |                |             |_________________{main.css}
+    |                |_____________[Scripts Folder]
+    |                |             |_________________{aos.js}
+    |                |             |_________________{carousel.js}
+    |                |             |_________________{main.js}
+    |                |_____________[Images Folder]
+    |                |             |_________________{background.png}
+    |                |_____________[Fonts Folder]
+    |                |             |_________________[Roboto]
+    |________________{index.html}
+```
+
 ## Usage
 > At the very first time of opening the file do the following:
 - Open the *setup.sh* file with any text editor.
