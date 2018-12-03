@@ -197,7 +197,7 @@ http.createServer((req, res) => {
 
 
 # The directory of the bash script.
-ESTRAP_PATH=`dirname $0`
+ESTRAP_PATH=`dirname $BASH_SOURCE`
 
 # The current directory.
 CURRENT_PATH=$(pwd)
@@ -285,7 +285,7 @@ cp -R "$ESTRAP_PATH/resources/img/favicon.png" "$ESTRAP_PATH/templates/node/publ
 # Check if the project's name is passed.
 if [ -z "$PROJECT_NAME" ] || [ -z "$TEMPLATE_NAME" ]
 then
-    Pause "Usage: estrap --project-name --template-name"
+    Pause "Usage: estrap [project name] [template name]"
 else
     # Check if the template exists.
     if [ -e "$ESTRAP_PATH/templates/$TEMPLATE_NAME" ]
