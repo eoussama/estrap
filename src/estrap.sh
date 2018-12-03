@@ -106,6 +106,9 @@ else
         # Creating the project's folder.
         CreateFolder $CURRENT_PATH $PROJECT_NAME
 
+        # Copying the template.
+        cp -R "$ESTRAP_PATH/templates/$TEMPLATE_NAME/." "$CURRENT_PATH/$PROJECT_NAME"
+
         # Displaying the end message.
         Pause "“$PROJECT_NAME” was successfully created!"
     else
