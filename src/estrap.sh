@@ -102,6 +102,7 @@ PopulatePHP() {
 
         <!-- Meta data. -->
         <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="author" content="'"$AUTHOR"'">
@@ -244,15 +245,18 @@ cp -R "$ESTRAP_PATH/resources/img/favicon.png" "$ESTRAP_PATH/templates/html/asse
 CreateFolder $ESTRAP_PATH "templates/php"
 CreateFolder $ESTRAP_PATH "templates/php/config"
 CreateFolder $ESTRAP_PATH "templates/php/controllers"
+CreateFolder $ESTRAP_PATH "templates/php/helpers"
+CreateFolder $ESTRAP_PATH "templates/php/lib"
 CreateFolder $ESTRAP_PATH "templates/php/models"
+CreateFolder $ESTRAP_PATH "templates/php/process"
 CreateFolder $ESTRAP_PATH "templates/php/public"
 CreateFolder $ESTRAP_PATH "templates/php/public/assets"
 CreateFolder $ESTRAP_PATH "templates/php/public/assets/js"
 CreateFolder $ESTRAP_PATH "templates/php/public/assets/css"
 CreateFolder $ESTRAP_PATH "templates/php/public/assets/img"
 CreateFolder $ESTRAP_PATH "templates/php/public/views"
-CreateFolder $ESTRAP_PATH "templates/php/public/views/partials"
-CreateFolder $ESTRAP_PATH "templates/php/utils"
+CreateFolder $ESTRAP_PATH "templates/php/templates"
+CreateFolder $ESTRAP_PATH "templates/php/templates/partials"
 CreateFile $ESTRAP_PATH "templates/php" ".htaccess" ""
 CreateFile $ESTRAP_PATH "templates/php/config" "config.ini" ""
 CreateFile $ESTRAP_PATH "templates/php/config" "config.php" ""
