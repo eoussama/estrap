@@ -40,7 +40,7 @@ PopulateHTML() {
     @version:    0.1.0
     @author:     '"$AUTHOR"'
     @license     '"$LICENSE"'
-    @source:     github.com/EOussama/'"$PROJECT_NAME"'
+    @source:     https://github.com/'"$AUTHOR"'/'"$PROJECT_NAME"'
     
 -->
 <!DOCTYPE html>
@@ -90,7 +90,7 @@ PopulatePHP() {
     * @version:    0.1.0
     * @author:     '"$AUTHOR"'
     * @license     '"$LICENSE"'
-    * @source:     github.com/EOussama/'"$PROJECT_NAME"'
+    * @source:     https://github.com/'"$AUTHOR"'/'"$PROJECT_NAME"'
     * 
     */
 ?>
@@ -142,7 +142,7 @@ PopulateJS() {
 * @version:    0.1.0
 * @author:     '"$AUTHOR"'
 * @license     '"$LICENSE"'
-* @source:     github.com/EOussama/'"$PROJECT_NAME"'
+* @source:     https://github.com/'"$AUTHOR"'/'"$PROJECT_NAME"'
 * 
 * The main javascript file of the app.
 */
@@ -160,7 +160,7 @@ PopulateCSS() {
 * @version:    0.1.0
 * @author:     '"$AUTHOR"'
 * @license     '"$LICENSE"'
-* @source:     github.com/EOussama/'"$PROJECT_NAME"'
+* @source:     https://github.com/'"$AUTHOR"'/'"$PROJECT_NAME"'
 * 
 * The main stylesheet of the app.
 */
@@ -182,7 +182,7 @@ PopulateNode() {
 * @version:    0.1.0
 * @author:     '"$AUTHOR"'
 * @license     '"$LICENSE"'
-* @source:     github.com/EOussama/'"$PROJECT_NAME"'
+* @source:     https://github.com/'"$AUTHOR"'/'"$PROJECT_NAME"'
 * 
 * The main entry of the app.
 */
