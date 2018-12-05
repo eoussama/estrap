@@ -1,10 +1,10 @@
 /**
 *
-* @name:       Calendar
+* @name:       temmejs
 * @version:    0.1.0
 * @author:     EOussama
 * @license     MIT
-* @source:     github.com/EOussama/Calendar
+* @source:     https://github.com/EOussama/temmejs
 * 
 * The main entry of the app.
 */

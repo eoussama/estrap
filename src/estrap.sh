@@ -50,7 +50,7 @@ PopulateHTML() {
 
         <!-- Meta data. -->
         <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="'"$AUTHOR"'">
         <meta name="application-name" content="'"$PROJECT_NAME"'">
@@ -103,7 +103,7 @@ PopulatePHP() {
         <!-- Meta data. -->
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="'"$AUTHOR"'">
         <meta name="application-name" content="'"$PROJECT_NAME"'">
@@ -145,7 +145,10 @@ PopulateJS() {
 * @source:     https://github.com/'"$AUTHOR"'/'"$PROJECT_NAME"'
 * 
 * The main javascript file of the app.
+*
 */
+
+"use strict";
 
 window.addEventListener('"'"'load'"'"', () => {
     console.log('"'"'Hello, world!'"'"');
@@ -185,6 +188,7 @@ PopulateNode() {
 * @source:     https://github.com/'"$AUTHOR"'/'"$PROJECT_NAME"'
 * 
 * The main entry of the app.
+*
 */
 
 const http = require('"'"'http'"'"');
