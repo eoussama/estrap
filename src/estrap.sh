@@ -43,6 +43,7 @@ PopulateHTML() {
     @source:     https://github.com/'"$AUTHOR"'/'"$PROJECT_NAME"'
     
 -->
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -166,6 +167,7 @@ PopulateCSS() {
 * @source:     https://github.com/'"$AUTHOR"'/'"$PROJECT_NAME"'
 * 
 * The main stylesheet of the app.
+*
 */
 
 body {

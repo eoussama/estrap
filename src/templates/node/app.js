@@ -1,12 +1,13 @@
 /**
 *
-* @name:       temmejs
+* @name:       iPhone 5 Emulator
 * @version:    0.1.0
 * @author:     EOussama
 * @license     MIT
-* @source:     https://github.com/EOussama/temmejs
+* @source:     https://github.com/EOussama/iPhone 5 Emulator
 * 
 * The main entry of the app.
+*
 */
 
 const http = require('http');
